@@ -2,7 +2,7 @@ using { anubhav.db } from '../db/datamodel';
 using { cappo.cds } from '../db/CDSViews';
 
 //Demo change for git
-service CatalogService @(path:'CatalogService') {
+service CatalogService @(path:'CatalogService',requires: 'authenticated-user') {
 
     @Capabilities : { Insertable, Deletable: false }
     entity BusinessPartnerSet as projection on db.master.businesspartner;

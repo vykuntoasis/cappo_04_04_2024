@@ -24,6 +24,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: cappo-db
+      - name: cappo-xsuaa
 
   - name: cappo-ui
     type: nodejs
@@ -36,7 +37,8 @@ modules:
           strictSSL: true
           forwardAuthToken: true
           url: '~{srv-url}'   
-
+      - name: cappo-xsuaa  
+      
   - name: cappo-db-deployer
     type: hdb
     path: gen/db
@@ -51,3 +53,10 @@ resources:
     parameters:
       service: hana
       service-plan: hdi-shared
+  - name: cappo-xsuaa
+    type: org.cloudfoundry.managed-service
+    description: Automatic XSUAA Service for Security
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json    
