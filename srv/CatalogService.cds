@@ -8,7 +8,11 @@ service CatalogService @(path:'CatalogService',requires: 'authenticated-user') {
     entity BusinessPartnerSet as projection on db.master.businesspartner;
     entity AddressSet as projection on db.master.address;
     @readonly
-    entity EmployeeSet as projection on db.master.employees;
+    entity EmployeeSet @(restrict: [ 
+                        { grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },
+                        { grant: ['WRITE'], to: 'Admin' }
+                        ])
+    as projection on db.master.employees;
     entity PurchaseOrderItems as projection on db.transaction.poitems;
     entity POs @(
         title: 'Purchase order',

@@ -39,7 +39,18 @@
         "[development]":{
           "strategy": "mock",
           "users": {
-           
+            "anubhav":{
+              "roles":["Viewer"],
+              "userAttributes":{
+                "BankName":["$UNRESTRICTED"]
+              }
+            },
+            "ananya":{
+              "roles":["Viewer"],
+              "userAttributes":{
+                "BankName":["My Bank of London","My Bank of New York","My Bank of San Francisco"]
+              }
+            }
           }
         }
       }
