@@ -7,12 +7,13 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
+    "@sap/cds-hana": "^2",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
-    "express": "^4",
-    "@sap/cds-hana": "^2"
+    "express": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7.8.0",
     "@sap/ux-specification": "^1.120.7"
   },
   "scripts": {
@@ -23,15 +24,14 @@
     "app/purchaseorderapp"
   ],
   "cds": {
-    "requires": {      
-      "db": "hana"  ,
-      "credentials":{
+    "requires": {
+      "db": "hana",
+      "credentials": {
         "database": "batman-key"
-      }   
-    }  ,
-    "hana":{
-      "deploy-format":"hdbtable"
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
     }
-    }   
+  }
 }
-
