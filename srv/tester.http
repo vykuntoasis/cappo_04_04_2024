@@ -64,3 +64,11 @@ GET http://localhost:4004/odata/v4/mysrvdemo/ReadEmployeeSrv
 
 ###Custom code - Entity GET with dynamic where
 GET http://localhost:4004/odata/v4/mysrvdemo/ReadEmployeeSrv/02BD2137-0890-1EEA-A6C2-BB55C197A7FB
+
+###Security Testing
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count
+Authorization: Basic ananya:
+
+###Security Testing
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count
+Authorization: Basic anubhav:

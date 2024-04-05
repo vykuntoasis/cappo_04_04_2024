@@ -7,8 +7,8 @@ service CatalogService @(path:'CatalogService',requires: 'authenticated-user') {
     @Capabilities : { Insertable, Deletable: false }
     entity BusinessPartnerSet as projection on db.master.businesspartner;
     entity AddressSet as projection on db.master.address;
-    @readonly
-    entity EmployeeSet @(restrict: [ 
+    //@readonly
+    entity EmployeeSet  @(restrict: [ 
                         { grant: ['READ'], to: 'Viewer', where: 'bankName = $user.BankName' },
                         { grant: ['WRITE'], to: 'Admin' }
                         ])

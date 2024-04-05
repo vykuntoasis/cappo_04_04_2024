@@ -38,7 +38,7 @@
         },
         "[development]":{
           "strategy": "mock",
-          "users": {
+           "users": {
             "anubhav":{
               "roles":["Viewer"],
               "userAttributes":{
@@ -51,6 +51,7 @@
                 "BankName":["My Bank of London","My Bank of New York","My Bank of San Francisco"]
               }
             }
+           
           }
         }
       }
